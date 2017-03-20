@@ -1,0 +1,29 @@
+{
+  "name": "jaff",
+  "version": "1.0.0",
+  "description": "Frontend code for the JAFF Voog website",
+  "repository": {
+    "type": "git",
+    "url": "git@pang.fraktal.ee:/var/git/jaff.git"
+  },
+  "author": "Stepan Bolotnikov",
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "node-sass": "^3.4.2",
+    "node-sass-globbing": "0.0.23",
+    "postcss-cli": "^2.5.1",
+    "rollup": "^0.25.8",
+    "uglify-js": "^2.6.2",
+    "watch": "^0.17.1"
+  },
+  "scripts": {
+    "sass": "node-sass src/css/main.scss dist/stylesheets/main.css --sourcemap=none --importer=node_modules/node-sass-globbing/index.js --output-style=compressed",
+    "autoprefix": "postcss --use autoprefixer dist/stylesheets/main.css -d stylesheets",
+    "css": "npm run sass && npm run autoprefix",
+    "uglify-js": "uglifyjs dist/javascripts/main.js --output=dist/javascripts/main.min.js --screw-ie8 --compress",
+    "rollup": "rollup -c",
+    "js": "npm run rollup && npm run uglify-js",
+    "build": "npm run css && npm run js",
+    "watch": "watch 'npm run build' src"
+  }
+}

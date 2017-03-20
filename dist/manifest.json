@@ -1,0 +1,77 @@
+{
+  "layouts": [
+    {
+      "title": "Front page",
+      "layout_name": "front_page",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl"
+    },
+    {
+      "title": "Common page",
+      "layout_name": "common_page",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/common_page.tpl"
+    },
+    {
+      "title": "Blog & News",
+      "layout_name": "blog___news",
+      "content_type": "blog",
+      "component": false,
+      "file": "layouts/blog___news.tpl"
+    },
+    {
+      "title": "Blog article",
+      "layout_name": "blog_article",
+      "content_type": "blog_article",
+      "component": false,
+      "file": "layouts/blog_article.tpl"
+    },
+    {
+      "title": "Schedule",
+      "layout_name": "schedule",
+      "content_type": "elements",
+      "component": false,
+      "file": "layouts/schedule.tpl"
+    },
+    {
+      "title": "Films",
+      "layout_name": "films",
+      "content_type": "elements",
+      "component": false,
+      "file": "layouts/films.tpl"
+    },
+    {
+      "title": "Store",
+      "layout_name": "store",
+      "content_type": "elements",
+      "component": false,
+      "file": "layouts/store.tpl"
+    },
+    {
+      "title": "Product",
+      "layout_name": "product",
+      "content_type": "element",
+      "component": false,
+      "file": "layouts/product.tpl"
+    },
+    {
+      "title": "Film",
+      "layout_name": "film",
+      "content_type": "element",
+      "component": false,
+      "file": "layouts/film.tpl"
+    },
+    {
+      "title": "Screening",
+      "layout_name": "screening",
+      "content_type": "element",
+      "component": false,
+      "file": "layouts/screening.tpl"
+    }
+  ],
+  "assets": [
+
+  ]
+}

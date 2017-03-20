@@ -1,0 +1,7 @@
+
+[jaffdev.voog.com]
+  host=jaffdev.voog.com
+  api_token=
+  overwrite=false
+  protocol=http
+
