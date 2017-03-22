@@ -1,0 +1,16 @@
+.product-container {
+  display: flex;
+
+  &_left {
+    margin-right: 30px;
+    flex: 0 0 400px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &_right {
+    flex: 1 1 auto;
+  }
+}

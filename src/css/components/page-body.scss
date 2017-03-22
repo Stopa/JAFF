@@ -1,0 +1,33 @@
+.page-body {
+  &_content {
+    background: $color-background;
+    padding: 45px 0;
+
+    > .wrapper > h1:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+
+    &.dashed-heading {
+      &:before,
+      &:after {
+        content: '';
+        height: 1px;
+        width: 38px;
+        background: currentColor;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:before {
+        margin-right: 10px;
+      }
+      &:after {
+        margin-left: 10px;
+      }
+    }
+  }
+}

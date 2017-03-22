@@ -1,0 +1,129 @@
+/* FORMS */
+form {
+  max-width: 100%;
+  margin-top: 20px;
+}
+.form_field_checkbox,
+.form_field_radio {
+  margin-right: 10px;
+}
+.form_field {
+  margin-top: 20px;
+}
+.form_field:first-child {
+  margin-top: 14px;
+}
+.form_field_label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.form_field label,
+.edy-fe-label {
+  display: block;
+  line-height: 2;
+}
+.form_field_textfield,
+.form_field_textarea,
+.form_field_select,
+.form_submit input {
+  font-family: inherit;
+  font-size: 14px;
+}
+.form_field_textfield,
+.form_field_textarea,
+.form_field_select,
+.form_field_file {
+  max-width: 100%;
+}
+.form_field_textfield,
+.form_field_textarea,
+.form_submit input {
+  color: currentColor;
+  background-color: #000000;
+  background-color: $color-background-dark;
+  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.67);
+  border-radius: 2px;
+}
+.form_field_textfield,
+.form_field_textarea {
+  width: 190px;
+  margin-top: 2px;
+  padding: 4px 5px 5px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 420px) {
+  .form_field_textfield,
+  .form_field_textarea {
+    width: 100%;
+  }
+}
+.form_field_textfield:focus,
+.form_field_textarea:focus {
+  outline: none;
+}
+.form_field_textarea {
+  box-sizing: border-box;
+  min-height: 111px;
+  overflow-x: hidden;
+}
+.comment-form .form_field_textarea .form_field_textarea {
+  min-height: 22px;
+}
+.form_field_size_medium {
+  width: 325px;
+}
+@media screen and (max-width: 420px) {
+  .form_field_size_medium {
+    width: 100%;
+  }
+}
+.form_field_size_large {
+  width: 630px;
+}
+.form_submit {
+  margin-top: 20px;
+}
+.form_submit input {
+  display: block;
+  padding: 10px 18px 9px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.form_submit input:hover {
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 420px) {
+  .form_submit input {
+    width: 100%;
+  }
+}
+
+.form_error,
+.form_field_error {
+  color: black;
+}
+
+.form_error,
+.form_notice {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.form_field_error {
+  font-size: 11px;
+}
+
+.form_notice {
+  color: rgba(100, 255, 100, 0.9);
+}
+
+.form_field_with_errors .form_field_textfield,
+.form_field_with_errors .form_field_textarea {
+  border: 1px solid #ee0000;
+}

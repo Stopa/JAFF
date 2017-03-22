@@ -1,0 +1,54 @@
+.film-roll {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &.-center {
+    ul {
+      justify-content: center;
+
+      li {
+        margin: 0 14px 23px;
+      }
+    }
+  }
+}
+
+.film-card {
+  flex: 0 0 268px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.35);
+  background-size: contain;
+
+  a {
+    display: flex;
+    height: 178px;
+    justify-content: stretch;
+    align-items: flex-end;
+    text-decoration: none;
+  }
+
+  &_name {
+    font-size: 15px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 8px;
+  }
+
+  &.-small {
+    flex: 0 0 171px;
+
+    a {
+      height: 114px;
+    }
+
+    .film-card_name {
+      font-size: 9px;
+    }
+  }
+}

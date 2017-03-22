@@ -1,0 +1,38 @@
+.page-header {
+  background: url('../images/header-bg.jpg?1') no-repeat center top;
+  background-size: cover;
+  color: white;
+  padding: 58px 0 50px;
+  overflow: hidden;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &_title {
+    text-align: center;
+    color: $color-yellow;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+
+    h1 {
+      font-size: 50px;
+      line-height: 39px;
+      margin: 0;
+    }
+  }
+}

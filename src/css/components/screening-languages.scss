@@ -1,0 +1,15 @@
+p.screening-languages {
+  margin-top: 5px;
+}
+
+.screening-language {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding: 5px;
+  display: inline-block;
+  background: $color-background-dark;
+
+  &.-audio:before {
+    content: '🔊 ';
+  }
+}

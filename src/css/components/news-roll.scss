@@ -1,0 +1,30 @@
+.news-roll {
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    flex: 0 1 164px;
+  }
+
+  a {
+    height: 177px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+      text-decoration: underline;
+    }
+  }
+}

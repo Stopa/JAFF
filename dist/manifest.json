@@ -69,9 +69,107 @@
       "content_type": "element",
       "component": false,
       "file": "layouts/screening.tpl"
+    },
+    {
+      "title": "blog-highlights",
+      "layout_name": "blog-highlights",
+      "content_type": "component",
+      "component": true,
+      "file": "components/blog-highlights.tpl"
+    },
+    {
+      "title": "film-highlights",
+      "layout_name": "film-highlights",
+      "content_type": "component",
+      "component": true,
+      "file": "components/film-highlights.tpl"
+    },
+    {
+      "title": "footer",
+      "layout_name": "footer",
+      "content_type": "component",
+      "component": true,
+      "file": "components/footer.tpl"
+    },
+    {
+      "title": "header",
+      "layout_name": "header",
+      "content_type": "component",
+      "component": true,
+      "file": "components/header.tpl"
+    },
+    {
+      "title": "langmenu",
+      "layout_name": "langmenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/langmenu.tpl"
+    },
+    {
+      "title": "mainmenu",
+      "layout_name": "mainmenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/mainmenu.tpl"
+    },
+    {
+      "title": "site-header",
+      "layout_name": "site-header",
+      "content_type": "component",
+      "component": true,
+      "file": "components/site-header.tpl"
+    },
+    {
+      "title": "sponsors",
+      "layout_name": "sponsors",
+      "content_type": "component",
+      "component": true,
+      "file": "components/sponsors.tpl"
+    },
+    {
+      "title": "open-graph",
+      "layout_name": "open-graph",
+      "content_type": "component",
+      "component": true,
+      "file": "components/open-graph.tpl"
     }
   ],
   "assets": [
-
+    {
+      "content_type": "text/css",
+      "kind": "stylesheets",
+      "file": "stylesheets/main.css",
+      "filename": "main.css"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/main.js",
+      "filename": "main.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/main.min.js",
+      "filename": "main.min.js"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/footer-bg.jpg",
+      "filename": "footer-bg.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/header-bg.jpg",
+      "filename": "header-bg.jpg"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/jaff-logo.png",
+      "filename": "jaff-logo.png"
+    }
   ]
 }

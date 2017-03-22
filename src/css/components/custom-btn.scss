@@ -1,0 +1,18 @@
+.custom-btn {
+  color: white;
+  background: $color-orange;
+  box-shadow: inset 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 22px;
+  font-size: 14px;
+  margin: 10px 0;
+
+  &:hover {
+    background: #e05220;
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}

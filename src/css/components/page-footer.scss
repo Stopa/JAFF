@@ -1,0 +1,31 @@
+.page-footer {
+  background: url('../images/footer-bg.jpg?1') no-repeat center top;
+  background-size: cover;
+  color: white;
+  overflow: hidden;
+  padding: 37px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &_left {
+    margin-right: 135px;
+  }
+
+  &_content {
+    text-align: center;
+  }
+}

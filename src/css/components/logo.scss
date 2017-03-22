@@ -1,0 +1,35 @@
+.logo {
+  margin: 0;
+  font-size: 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 0 130px 130px black;
+  }
+
+  a {
+    display: block;
+    width: 168px;
+    height: 180px;
+    background: url('../images/jaff-logo.png?1') no-repeat center;
+    background-size: cover;
+    position: relative;
+  }
+
+  &.-small {
+    a {
+      width: 94px;
+      height: 101px;
+    }
+
+    &:before {
+      box-shadow: 0 0 70px 70px black;
+    }
+  }
+}

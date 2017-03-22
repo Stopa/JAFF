@@ -1,0 +1,137 @@
+.screening__date:nth-child(n+1) {
+  margin-top: 40px;
+}
+
+.screening__city {
+
+}
+
+
+
+.schedule-filter {
+  padding: 10px 0 20px;
+}
+
+.schedule-filter select {
+  padding: 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 500px) {
+  .schedule-filter select {
+    width: 100%;
+  }
+}
+
+.screenings {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.schedule {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.screening-row {
+  &.hidden {
+    display: none;
+  }
+}
+
+.schedule tbody.hidden,
+.schedule tr.hidden {
+  display: none;
+}
+
+.day-row th {
+  text-transform: uppercase;
+  text-align: left;
+  background: $color-background-dark;
+  padding: 10px;
+}
+
+.schedule td {
+  padding: 10px;
+}
+
+.schedule-ticket-td,
+.day-row th.schedule-ticket-td {
+  text-align: center;
+}
+
+.schedule a {
+  text-decoration: none;
+}
+
+.schedule-ticket {
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  background: $color-background-dark;
+  border-radius: 100%;
+  color: $color-dark;
+}
+.schedule-ticket:hover {
+  color: $color-orange;
+}
+
+.screening-languages-td {
+  white-space: nowrap;
+}
+
+.screening-languages {
+  margin: 5px 0 0 0 !important;
+  color: white !important;
+}
+
+.screening-language {
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.screening-language.-audio:before {
+  content: '🔊 ';
+}
+
+@media screen and (max-width: 550px) {
+  .schedule tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .schedule th {
+    flex: 0 0 100%;
+    display: block;
+  }
+  .schedule th:nth-child(n+2) {
+    display: none;
+  }
+  .schedule td {
+    display: block;
+    flex: 0 0 50%;
+    box-sizing: border-box;
+  }
+  .schedule td:nth-child(3),
+  .schedule td:nth-child(4) {
+    order: -1;
+  }
+  .schedule td:last-child {
+    flex-basis: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .schedule-ticket {
+    width: auto;
+    padding: 0 10px;
+    border-radius: 12px;
+  }
+  .screenings .schedule td:last-child {
+    flex-basis: 50%;
+    border-bottom: none;
+  }
+}
