@@ -18,7 +18,7 @@
   },
   "scripts": {
     "sass": "node-sass src/css/main.scss dist/stylesheets/main.css --sourcemap=none --importer=node_modules/node-sass-globbing/index.js --output-style=compressed",
-    "autoprefix": "postcss --use autoprefixer dist/stylesheets/main.css -d stylesheets",
+    "autoprefix": "postcss --use autoprefixer dist/stylesheets/main.css -d dist/stylesheets",
     "css": "npm run sass && npm run autoprefix",
     "uglify-js": "uglifyjs dist/javascripts/main.js --output=dist/javascripts/main.min.js --screw-ie8 --compress",
     "rollup": "rollup -c",
