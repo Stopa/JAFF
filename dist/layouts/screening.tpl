@@ -23,5 +23,6 @@
     </section>
     {% include "footer" %}
   </div>
+{% include "JS" %}
 </body>
 </html>

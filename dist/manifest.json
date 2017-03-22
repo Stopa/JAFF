@@ -132,6 +132,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/open-graph.tpl"
+    },
+    {
+      "title": "js",
+      "layout_name": "js",
+      "content_type": "component",
+      "component": true,
+      "file": "components/js.tpl"
     }
   ],
   "assets": [

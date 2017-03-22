@@ -59,133 +59,134 @@
       </div>
     </section>
     {% include "footer" %}
-    <script>
+  </div>
+  <script>
 
-  function filterScreenings() {
-    var selectedCity = document.querySelector('.city-filter').value,
-        selectedDate = document.querySelector('.date-filter').value,
-        hashparts = [],
-        rows = document.querySelectorAll('.screening-row');
+function filterScreenings() {
+  var selectedCity = document.querySelector('.city-filter').value,
+      selectedDate = document.querySelector('.date-filter').value,
+      hashparts = [],
+      rows = document.querySelectorAll('.screening-row');
 
-    if (selectedCity == '') {
-      Array.prototype.forEach.call(rows, function(row) {
+  if (selectedCity == '') {
+    Array.prototype.forEach.call(rows, function(row) {
+      row.classList.remove('hidden');
+    });
+  } else {
+    Array.prototype.forEach.call(rows, function(row) {
+      var rowCity = row.dataset.city,
+          cityMatches = selectedCity == rowCity
+
+      if (cityMatches) {
         row.classList.remove('hidden');
-      });
-    } else {
-      Array.prototype.forEach.call(rows, function(row) {
-        var rowCity = row.dataset.city,
-            cityMatches = selectedCity == rowCity
-
-        if (cityMatches) {
-          row.classList.remove('hidden');
-        } else {
-          row.classList.add('hidden');
-        }
-      });
-    }
-
-    var scheduleBodies = document.querySelectorAll('.schedule tbody');
-    Array.prototype.forEach.call(scheduleBodies, function(body) {
-      var tbodyDate = body.dataset.day,
-          dateMatches = selectedDate == '' || selectedDate == tbodyDate,
-          hasScreenings = body.querySelectorAll('.screening-row:not(.hidden)').length > 0
-
-      if (!(dateMatches && hasScreenings)) {
-        body.classList.add('hidden');
       } else {
-        body.classList.remove('hidden');
+        row.classList.add('hidden');
       }
     });
-
-    if (selectedCity !== '') {
-      hashparts.push('city='+selectedCity);
-    }
-
-    if (selectedDate !== '') {
-      hashparts.push('date='+selectedDate);
-    }
-
-    location.hash = hashparts.join('&');
   }
 
-  var selects = document.querySelectorAll('.schedule-filter select');
-  Array.prototype.forEach.call(selects, function(select) {
-    select.addEventListener('change', filterScreenings);
+  var scheduleBodies = document.querySelectorAll('.schedule tbody');
+  Array.prototype.forEach.call(scheduleBodies, function(body) {
+    var tbodyDate = body.dataset.day,
+        dateMatches = selectedDate == '' || selectedDate == tbodyDate,
+        hasScreenings = body.querySelectorAll('.screening-row:not(.hidden)').length > 0
+
+    if (!(dateMatches && hasScreenings)) {
+      body.classList.add('hidden');
+    } else {
+      body.classList.remove('hidden');
+    }
   });
 
-  if (location.hash.length > 0) {
-    var hashCityMatch = location.hash.match(/city=([^\&]+)/),
-        hashCity = hashCityMatch ? hashCityMatch[1] : '',
-        hashDateMatch = location.hash.match(/date=([^\&]+)/),
-        hashDate = hashDateMatch ? hashDateMatch[1] : '',
-        citySelector = '[value="' + decodeURIComponent(hashCity) + '"]',
-        dateSelector = '[value="' + decodeURIComponent(hashDate) + '"]';
-
-    if (hashCityMatch) {
-      document.querySelector('.city-filter ' + citySelector).selected = true;
-    }
-
-    if (hashDateMatch) {
-      document.querySelector('.date-filter ' + dateSelector).selected = true;
-    }
-
-    filterScreenings();
+  if (selectedCity !== '') {
+    hashparts.push('city='+selectedCity);
   }
-{% elementscontext edicy_model="Film" %}
-  var movies = {
-    {% for element in elements %}
-    {% assign words = element.screenings.first.title | split: ' ' %}
-    {% assign name = '' %}
-    {% for word in words %}
-    {% if forloop.rindex > 2 %}
-    {% assign name = name | append:' ' | append: word %}
-    {% endif %}
-    {% endfor %}
-    "{{ name | lstrip }}": {
-      title: "{{ element.title | strip | strip_newlines }}",
-      url: '{{ element.url }}',
-      audio: '{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% endcase %}',
-      subtitles:
-        '{% if element.subtitles_en %}eng{% endif %}{% if element.subtitles_ru %}|rus{% endif %}{% if element.subtitles_et %}|est{% endif %}'.split('|')
 
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
+  if (selectedDate !== '') {
+    hashparts.push('date='+selectedDate);
+  }
+
+  location.hash = hashparts.join('&');
+}
+
+var selects = document.querySelectorAll('.schedule-filter select');
+Array.prototype.forEach.call(selects, function(select) {
+  select.addEventListener('change', filterScreenings);
+});
+
+if (location.hash.length > 0) {
+  var hashCityMatch = location.hash.match(/city=([^\&]+)/),
+      hashCity = hashCityMatch ? hashCityMatch[1] : '',
+      hashDateMatch = location.hash.match(/date=([^\&]+)/),
+      hashDate = hashDateMatch ? hashDateMatch[1] : '',
+      citySelector = '[value="' + decodeURIComponent(hashCity) + '"]',
+      dateSelector = '[value="' + decodeURIComponent(hashDate) + '"]';
+
+  if (hashCityMatch) {
+    document.querySelector('.city-filter ' + citySelector).selected = true;
+  }
+
+  if (hashDateMatch) {
+    document.querySelector('.date-filter ' + dateSelector).selected = true;
+  }
+
+  filterScreenings();
+}
+{% elementscontext edicy_model="Film" %}
+var movies = {
+  {% for element in elements %}
+  {% assign words = element.screenings.first.title | split: ' ' %}
+  {% assign name = '' %}
+  {% for word in words %}
+  {% if forloop.rindex > 2 %}
+  {% assign name = name | append:' ' | append: word %}
+  {% endif %}
+  {% endfor %}
+  "{{ name | lstrip }}": {
+    title: "{{ element.title | strip | strip_newlines }}",
+    url: '{{ element.url }}',
+    audio: '{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% endcase %}',
+    subtitles:
+      '{% if element.subtitles_en %}eng{% endif %}{% if element.subtitles_ru %}|rus{% endif %}{% if element.subtitles_et %}|est{% endif %}'.split('|')
+
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+};
 {% endelementscontext %}
 
-  var titles = document.querySelectorAll('[data-screening-title]');
-  Array.prototype.forEach.call(titles, function(title) {
-    var screeningTitle = title.dataset.screeningTitle,
-        words = screeningTitle.split(' '),
-        wordsCount = words.length,
-        filmWords = words.splice(0, wordsCount - 2),
-        filmObject = movies[filmWords.join(' ')],
-        filmName = filmObject.title,
-        filmUrl = filmObject.url,
-        filmAudio = filmObject.audio,
-        filmSubs = filmObject.subtitles,
-        languageTd = title.parentNode.nextElementSibling;
+var titles = document.querySelectorAll('[data-screening-title]');
+Array.prototype.forEach.call(titles, function(title) {
+  var screeningTitle = title.dataset.screeningTitle,
+      words = screeningTitle.split(' '),
+      wordsCount = words.length,
+      filmWords = words.splice(0, wordsCount - 2),
+      filmObject = movies[filmWords.join(' ')],
+      filmName = filmObject.title,
+      filmUrl = filmObject.url,
+      filmAudio = filmObject.audio,
+      filmSubs = filmObject.subtitles,
+      languageTd = title.parentNode.nextElementSibling;
 
-    title.setAttribute('href', filmUrl);
-    title.innerHTML = filmName;
+  title.setAttribute('href', filmUrl);
+  title.innerHTML = filmName;
 
-    var audioElement = document.createElement('span');
-    audioElement.classList.add('screening-language', '-audio');
-    audioElement.innerHTML = filmAudio;
+  var audioElement = document.createElement('span');
+  audioElement.classList.add('screening-language', '-audio');
+  audioElement.innerHTML = filmAudio;
 
-    languageTd.appendChild(audioElement);
+  languageTd.appendChild(audioElement);
 
-    filmSubs.forEach(function(lang) {
-      if (lang.length > 0) {
-        var langElement = document.createElement('span');
-        langElement.classList.add('screening-language', '-subtitle');
-        langElement.innerHTML = lang;
+  filmSubs.forEach(function(lang) {
+    if (lang.length > 0) {
+      var langElement = document.createElement('span');
+      langElement.classList.add('screening-language', '-subtitle');
+      langElement.innerHTML = lang;
 
-        languageTd.appendChild(langElement);
-      }
-    });
+      languageTd.appendChild(langElement);
+    }
   });
-  </script>
-  </div>
+});
+</script>
+{% include "JS" %}
 </body>
 </html>

@@ -78,5 +78,6 @@
     }
   });
 </script>
+{% include "JS" %}
 </body>
 </html>
