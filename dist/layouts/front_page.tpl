@@ -10,8 +10,8 @@
         <div class="page-body_content">
           <div class="wrapper">
             {% content %}
-            {% include "blog-highlights" %}
-            {% include "film-highlights" %}
+            {% comment %}{% include "blog-highlights" %}
+            {% include "film-highlights" %}{% endcomment %}
           </div>
         </div>
         {% include "sponsors" %}
