@@ -9,6 +9,8 @@
     <section class="page-body">
         <div class="page-body_content">
           <div class="wrapper">
+            {% content %}
+            {% if editmode %}{% addbutton "Element" %}{% endif %}
             {% grouped programmes by programme in elements %}
             {% for programme in programmes %}
             <div class="film-highlights">
@@ -51,6 +53,54 @@
                       {% when 'et' %}Eriseanss
                       {% when 'ru' %}Специальный сеанс
                       {% when 'en' %}Special screening
+                    {% endcase %}
+                  {% when 'Jaapani elustiili programm / Kokakunst' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Jaapani elustiili programm / Kokakunst
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Eriprogramm "VERSUS"' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Eriprogramm "VERSUS"
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'JAFFi eri: Küborgid' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}JAFFi eri: Küborgid
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Eesti animatsioon' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Eesti animatsioon
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Külaliste päev' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Külaliste päev
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Filmiprojektide presentatsioon' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Filmiprojektide presentatsioon
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Armastatud koguperefilmid' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Armastatud koguperefilmid
+                      {% when 'ru' %}
+                      {% when 'en' %}
+                    {% endcase %}
+                  {% when 'Film-kontsert' %}
+                    {% case page.language_code %}
+                      {% when 'et' %}Film-kontsert
+                      {% when 'ru' %}
+                      {% when 'en' %}
                     {% endcase %}
                 {% endcase %}
               </h1>{% endif %}{% endfor %}
