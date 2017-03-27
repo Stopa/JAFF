@@ -139,6 +139,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/js.tpl"
+    },
+    {
+      "title": "film-programme",
+      "layout_name": "film-programme",
+      "content_type": "component",
+      "component": true,
+      "file": "components/film-programme.tpl"
     }
   ],
   "assets": [
