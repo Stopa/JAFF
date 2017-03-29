@@ -44,7 +44,7 @@
     2231: ["S", "M", "L", "XL"], // väike komplekt
     2233: ["L", "XL", "XXL"], // 2016 särk
     2234: ["{% if page.language_code == 'en' %}Black{% elsif page.language_code == 'ru' %}Черные{% else %}Must{% endif %} 37-40", "{% if page.language_code == 'en' %}Black{% elsif page.language_code == 'ru' %}Черные{% else %}Must{% endif %} 41-44", "{% if page.language_code == 'en' %}White{% elsif page.language_code == 'ru' %}Белые{% else %}Valge{% endif %} 41-44"], // sokid
-    2236: ["XL", "XXL"], // 2015 särk
+    2236: ["XXL"], // 2015 särk
     2543: ["a", "b"],
     2544: ['C', 'asd']
   };
