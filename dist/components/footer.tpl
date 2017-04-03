@@ -3,7 +3,6 @@
     <div class="page-footer_left">
       <div class="logo -small">
         <a href="{{ site.root_item.url }}">
-          <img src="{{ images_path }}/logo-footer.png" alt="JAFF" />
         </a>
       </div>
     </div>

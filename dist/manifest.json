@@ -1,18 +1,18 @@
 {
   "layouts": [
     {
-      "title": "Front page",
-      "layout_name": "front_page",
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/front_page.tpl"
-    },
-    {
       "title": "Common page",
       "layout_name": "common_page",
       "content_type": "page",
       "component": false,
       "file": "layouts/common_page.tpl"
+    },
+    {
+      "title": "Front page",
+      "layout_name": "front_page",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl"
     },
     {
       "title": "Blog & News",
@@ -57,6 +57,13 @@
       "file": "layouts/product.tpl"
     },
     {
+      "title": "Screening",
+      "layout_name": "screening",
+      "content_type": "element",
+      "component": false,
+      "file": "layouts/screening.tpl"
+    },
+    {
       "title": "Film",
       "layout_name": "film",
       "content_type": "element",
@@ -64,11 +71,18 @@
       "file": "layouts/film.tpl"
     },
     {
-      "title": "Screening",
-      "layout_name": "screening",
-      "content_type": "element",
-      "component": false,
-      "file": "layouts/screening.tpl"
+      "title": "js",
+      "layout_name": "js",
+      "content_type": "component",
+      "component": true,
+      "file": "components/js.tpl"
+    },
+    {
+      "title": "film-programme",
+      "layout_name": "film-programme",
+      "content_type": "component",
+      "component": true,
+      "file": "components/film-programme.tpl"
     },
     {
       "title": "blog-highlights",
@@ -113,6 +127,13 @@
       "file": "components/mainmenu.tpl"
     },
     {
+      "title": "open-graph",
+      "layout_name": "open-graph",
+      "content_type": "component",
+      "component": true,
+      "file": "components/open-graph.tpl"
+    },
+    {
       "title": "site-header",
       "layout_name": "site-header",
       "content_type": "component",
@@ -125,65 +146,44 @@
       "content_type": "component",
       "component": true,
       "file": "components/sponsors.tpl"
-    },
-    {
-      "title": "open-graph",
-      "layout_name": "open-graph",
-      "content_type": "component",
-      "component": true,
-      "file": "components/open-graph.tpl"
-    },
-    {
-      "title": "js",
-      "layout_name": "js",
-      "content_type": "component",
-      "component": true,
-      "file": "components/js.tpl"
-    },
-    {
-      "title": "film-programme",
-      "layout_name": "film-programme",
-      "content_type": "component",
-      "component": true,
-      "file": "components/film-programme.tpl"
     }
   ],
   "assets": [
     {
-      "content_type": "text/css",
-      "kind": "stylesheets",
+      "kind": "stylesheet",
+      "filename": "main.css",
       "file": "stylesheets/main.css",
-      "filename": "main.css"
+      "content_type": "text/css"
     },
     {
-      "content_type": "application/javascript",
-      "kind": "javascripts",
+      "kind": "javascript",
+      "filename": "main.js",
       "file": "javascripts/main.js",
-      "filename": "main.js"
+      "content_type": "text/javascript"
     },
     {
-      "content_type": "application/javascript",
-      "kind": "javascripts",
+      "kind": "javascript",
+      "filename": "main.min.js",
       "file": "javascripts/main.min.js",
-      "filename": "main.min.js"
+      "content_type": "text/javascript"
     },
     {
-      "content_type": "image/jpeg",
-      "kind": "images",
+      "kind": "image",
+      "filename": "footer-bg.jpg",
       "file": "images/footer-bg.jpg",
-      "filename": "footer-bg.jpg"
+      "content_type": "image/jpg"
     },
     {
-      "content_type": "image/jpeg",
-      "kind": "images",
+      "kind": "image",
+      "filename": "header-bg.jpg",
       "file": "images/header-bg.jpg",
-      "filename": "header-bg.jpg"
+      "content_type": "image/jpg"
     },
     {
-      "content_type": "image/png",
-      "kind": "images",
+      "kind": "image",
+      "filename": "jaff-logo.png",
       "file": "images/jaff-logo.png",
-      "filename": "jaff-logo.png"
+      "content_type": "image/png"
     }
   ]
 }
