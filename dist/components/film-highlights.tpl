@@ -1,22 +1,14 @@
+{% elementscontext edicy_all_languages="true" edicy_page_path_prefix="filmid" q.element.values.featured="true" %}
 <div class="film-highlights">
   <h1 class="dashed-heading">{% if page.language_code == "ru" %}Новые фильмы{% elsif page.language_code == "et" %}Uued filmid{% else %}New films{% endif %}</h1>
   <nav class="film-roll">
-    <ul>
-      <li class="film-card" style="background: url(/images/header-bg.jpg)">
+    <ul>{% for element in elements %}
+      <li class="film-card" style="background-image: url({{ element.cover_art }})">
         <a href="{{ element.url }}">
-          <span class="film-card_name">Kimi no na wa</span>
+          <span class="film-card_name">{{ element.title }}</span>
         </a>
-      </li>
-      <li class="film-card" style="background: url(/images/footer-bg.jpg)">
-        <a href="{{ element.url }}">
-          <span class="film-card_name">Veel anime</span>
-        </a>
-      </li>
-      <li class="film-card" style="background: url(/images/header-bg.jpg)">
-        <a href="{{ element.url }}">
-          <span class="film-card_name">Järjekordne anime</span>
-        </a>
-      </li>
+      </li>{% endfor %}
     </ul>
   </nav>
 </div>
+{% endelementscontext %}
