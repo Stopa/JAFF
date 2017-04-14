@@ -63,7 +63,7 @@
     {% endcase %}
   {% when 'Külaliste päev' %}
     {% case page.language_code %}
-      {% when 'et' %}Külaliste päev
+      {% when 'et' %}Külaliste päev (Venemaa)
       {% when 'ru' %}
       {% when 'en' %}
     {% endcase %}
@@ -85,4 +85,6 @@
       {% when 'ru' %}
       {% when 'en' %}
     {% endcase %}
+  {% when 'Eesti juubelid' %}
+    Eesti juubelid
 {% endcase %}

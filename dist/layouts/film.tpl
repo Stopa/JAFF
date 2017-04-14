@@ -26,7 +26,7 @@
           <div class="film-meta">
             <em>{{ element.original_title }}</em>
             <p>{{ element.meta }}</p>
-            <p class="screening-languages"><span class="screening-language -audio" title="{% if page.language_code == 'ru' %}Звук{% else %}Audio{% endif %}">{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% endcase %}</span>
+            <p class="screening-languages"><span class="screening-language -audio" title="{% if page.language_code == 'ru' %}Звук{% else %}Audio{% endif %}">{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% when 'Russian' %}rus{% endcase %}</span>
               {% if element.subtitles_en %} <span class="screening-language -subtitle" title="{% if page.language_code == 'ru' %}Субтитры{% elsif page.language_code == 'ru' %}Subtiitrid{% else %}Subtitles{% endif %}">eng</span>{% endif %}
               {% if element.subtitles_et %} <span class="screening-language -subtitle" title="{% if page.language_code == 'ru' %}Субтитры{% elsif page.language_code == 'ru' %}Subtiitrid{% else %}Subtitles{% endif %}">est</span>{% endif %}
               {% if element.subtitles_ru %} <span class="screening-language -subtitle" title="{% if page.language_code == 'ru' %}Субтитры{% elsif page.language_code == 'ru' %}Subtiitrid{% else %}Subtitles{% endif %}">rus</span>{% endif %}</p>

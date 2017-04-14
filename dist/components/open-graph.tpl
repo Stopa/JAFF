@@ -6,7 +6,7 @@
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:site_name" content="{{ page.site_title | escape }}">
 
-{% assign fallback_body_image = 'http://jaff10.animefest.eu/photos/jaffog17.png' %}
+{% assign fallback_body_image = 'http://jaff10.animefest.eu/photos/jaffog17b.jpg' %}
 
 {% comment %}Open Graph image{% endcomment %}
 {% if article %}
