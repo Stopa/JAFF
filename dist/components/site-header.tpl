@@ -17,7 +17,7 @@
 <script src="{{ javascripts_path }}/modernizr.min.js"></script>
 
 {% comment %}STYLESHEETS{% endcomment %}
-{% stylesheet_link "main.css?2017" %}
+{% stylesheet_link "main.css?2017-2" %}
 {% if editmode %}
   {% stylesheet_link "editmode.min.css" %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">

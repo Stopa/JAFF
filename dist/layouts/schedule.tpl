@@ -9,7 +9,7 @@
     <section class="page-body">
         <div class="page-body_content">
           <div class="wrapper">
-            {% elementscontext edicy_all_languages="true" edicy_model="Screening" %}
+            {% elementscontext edicy_all_languages="true" edicy_model="Screening" edicy_page_path_prefix="programm" %}
             {% reorder elements by datetime %}
             <div class="schedule-filter">
               <select class="date-filter">
@@ -132,7 +132,7 @@ if (location.hash.length > 0) {
 
   filterScreenings();
 }
-{% elementscontext edicy_model="Film" %}
+{% elementscontext edicy_model="Film" edicy_page_path_prefix="filmid" %}
 var movies = {
   {% for element in elements %}
   {% assign words = element.screenings.first.title | split: ' ' %}
@@ -145,7 +145,7 @@ var movies = {
   "{{ name | lstrip }}": {
     title: "{{ element.title | strip | strip_newlines }}",
     url: '{{ element.url }}',
-    audio: '{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% endcase %}',
+    audio: '{% case element.audio_language %}{% when 'Japanese' %}jap{% when 'Estonian' %}est{% when 'English' %}eng{% when 'Russian' %}rus{% endcase %}',
     subtitles:
       '{% if element.subtitles_en %}eng{% endif %}{% if element.subtitles_ru %}|rus{% endif %}{% if element.subtitles_et %}|est{% endif %}'.split('|')
 
@@ -170,11 +170,13 @@ Array.prototype.forEach.call(titles, function(title) {
   title.setAttribute('href', filmUrl);
   title.innerHTML = filmName;
 
-  var audioElement = document.createElement('span');
-  audioElement.classList.add('screening-language', '-audio');
-  audioElement.innerHTML = filmAudio;
+  if (filmAudio.length > 0) {
+    var audioElement = document.createElement('span');
+    audioElement.classList.add('screening-language', '-audio');
+    audioElement.innerHTML = filmAudio;
 
-  languageTd.appendChild(audioElement);
+    languageTd.appendChild(audioElement);
+  }
 
   filmSubs.forEach(function(lang) {
     if (lang.length > 0) {

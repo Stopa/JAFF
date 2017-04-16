@@ -37,7 +37,7 @@
           </div>
           {% editable element.description %}
           {% unless editmode %}
-          {% comment %}<h1>{% case page.language_code %}{% when 'et' %}Seansid{% when 'en' %}Screenings{% when 'ru' %}Сеансы{% endcase %}</h1>{% endcomment %}
+          <h1>{% case page.language_code %}{% when 'et' %}Seansid{% when 'en' %}Screenings{% when 'ru' %}Сеансы{% endcase %}</h1>
           <div class="screenings">
             {% reorder element.screenings by datetime %}
             <table class="schedule -small">
@@ -68,6 +68,7 @@
             {% endunless %}
           </div>
         </div>
+      </div>
       {% include "sponsors" %}
     </section>
     {% include "footer" %}
