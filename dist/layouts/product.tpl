@@ -36,6 +36,7 @@
     </section>
     {% include "footer" %}
   </div>
+{% comment %}
 <script>
   var variations = {
     2230: ["S", "M", "L", "XL"], // pusa
@@ -78,6 +79,7 @@
     }
   });
 </script>
+{% endcomment %}
 {% include "JS" %}
 </body>
 </html>
