@@ -39,9 +39,10 @@
           {% unless editmode %}
           <h1>{% case page.language_code %}{% when 'et' %}Seansid{% when 'en' %}Screenings{% when 'ru' %}Сеансы{% endcase %}</h1>
           <div class="screenings">
-            {% reorder element.screenings by datetime %}
+            {% assign screenings = element.screenings %}
+            {% reorder screenings by datetime %}
             <table class="schedule -small">
-            {% for screening in element.screenings %}
+            {% for screening in screenings %}
               {% ifchanged %}
                 {% unless element.first? %}</tbody>{% endunless %}
                 <tbody>

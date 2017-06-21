@@ -1,4 +1,12 @@
 .sponsors {
   background: white;
   padding: 15px 0 45px;
+  text-align: center;
+
+  .image-container {
+    display: inline-block !important;
+    float: none !important;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
 }

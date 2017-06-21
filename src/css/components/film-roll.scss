@@ -22,38 +22,3 @@
     }
   }
 }
-
-.film-card {
-  flex: 0 0 268px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.35);
-  background-size: cover;
-
-  a {
-    display: flex;
-    height: 178px;
-    justify-content: stretch;
-    align-items: flex-end;
-    text-decoration: none;
-  }
-
-  &_name {
-    font-size: 15px;
-    color: white;
-    background: rgba(0, 0, 0, 0.6);
-    flex: 1 0 auto;
-    text-align: center;
-    padding: 8px;
-  }
-
-  &.-small {
-    flex: 0 0 211px;
-
-    a {
-      height: 134px;
-    }
-
-    .film-card_name {
-      font-size: 9px;
-    }
-  }
-}
